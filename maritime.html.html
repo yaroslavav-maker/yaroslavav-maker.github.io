@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maritime English Basics: NATO • Numbers • Time • Verbs</title>
+    <style>
+        :root {
+            --ocean-dark: #0a2540;
+            --ocean-blue: #1a4a7a;
+            --ocean-light: #3a7ca5;
+            --sky-blue: #6ab0de;
+            --sand: #f4e7d3;
+            --warning: #ff6b35;
+            --success: #2ecc71;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+            --text: #2d3748;
+            --shadow: 0 4px 20px rgba(0,0,0,0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-blue) 50%, var(--sky-blue) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.07) 0%, transparent 25%);
+            z-index: -1;
+            animation: pulse 15s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            position: relative;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .ship-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .progress-container {
+            background: rgba(255,255,255,0.15);
+            border-radius: 50px;
+            height: 12px;
+            max-width: 500px;
+            margin: 25px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--warning), #ff9e64);
+            border-radius: 50px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+        
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 8px;
+            height: 18px;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        
+        .section-title {
+            color: var(--ocean-dark);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--sky-blue);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 28px;
+            background: var(--warning);
+            border-radius: 4px;
+        }
+        
+        /* VOCABULARY BANK STYLES */
+        .vocab-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .vocab-tab {
+            padding: 10px 20px;
+            background: var(--gray);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .vocab-tab.active {
+            background: var(--ocean-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(26, 74, 122, 0.3);
+        }
+        
+        .vocab-tab:hover:not(.active) {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+        
+        .vocab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .vocab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* NATO ALPHABET GRID */
+        .nato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .nato-card {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .nato-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--sky-blue);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .nato-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(106, 176, 222, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 50%;
+        }
+        
+        .nato-card:hover::before {
+            opacity: 1;
+        }
+        
+        .nato-letter {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--ocean-dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .nato-word {
+            font-weight: 600;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            display: block;
+        }
+        
+        .nato-pronounce {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 4px;
+            font-style: italic;
+            display: block;
+        }
+        
+        .nato-card.playing {
+            animation: pulseCard 0.6s ease;
+            border-color: var(--warning);
+            background: linear-gradient(145deg, #fff8f0, #ffe8d6);
+        }
+        
+        @keyframes pulseCard {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* NUMBERS SECTION */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .number-card {
+            background: var(--gray);
+            border-radius: 14px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-weight: 600;
+        }
+        
+        .number-card:hover {
+            background: var(--sky-blue);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--ocean-blue);
+        }
+        
+        .number-card.active {
+            background: var(--ocean-blue);
+            color: white;
+            border-color: var(--warning);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(26, 74, 122, 0.4);
+        }
+        
+        .number-value {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .number-word {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .maritime-context {
+            background: linear-gradient(135deg, var(--ocean-light), var(--sky-blue));
+            border-radius: 16px;
+            padding: 20px;
+            margin: 25px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .maritime-context::before {
+            content: "🌊";
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            right: -20px;
+            bottom: -30px;
+            transform: rotate(-15deg);
+        }
+        
+        .context-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .context-example {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+        
+        /* TIME SECTION */
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 8px solid var(--ocean-blue);
+            border-radius: 50%;
+            position: relative;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .clock::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--warning);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            border: 3px solid white;
+        }
+        
+        .hour-marks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hour-mark {
+            position: absolute;
+            width: 4px;
+            height: 12px;
+            background: var(--ocean-dark);
+            left: 50%;
+            top: 15px;
+            transform-origin: bottom center;
+            border-radius: 2px;
+        }
+        
+        .hour-hand, .minute-hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            border-radius: 4px;
+            z-index: 5;
+        }
+        
+        .hour-hand {
+            width: 6px;
+            height: 50px;
+            background: var(--ocean-dark);
+            margin-left: -3px;
+        }
+        
+        .minute-hand {
+            width: 4px;
+            height: 70px;
+            background: var(--ocean-blue);
+            margin-left: -2px;
+        }
+        
+        .time-display {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ocean-dark);
+            margin: 20px 0;
+            text-align: center;
+            font-family: monospace;
+            letter-spacing: 3px;
+        }
+        
+        .time-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .time-btn {
+            padding: 12px 25px;
+            background: var(--ocean-blue);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .time-btn:hover {
+            background: var(--ocean-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 37, 64, 0.3);
+        }
+        
+        .time-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .time-btn.secondary {
+            background: var(--gray);
+            color: var(--ocean-dark);
+        }
+        
+        .time-btn.secondary:hover {
+            background: #e2e6ea;
+        }
+        
+        /* VERBS SECTION */
+        .verbs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .verb-card {
+            background: var(--gray);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verb-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--sky-blue);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .verb-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--warning), var(--ocean-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .verb-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .verb-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .verb-card:hover .verb-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .verb-en {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--ocean-dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .verb-ru {
+            color: var(--ocean-blue);
+            font-weight: 500;
+            display: block;
+        }
+        
+        .verb-example {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 8px;
+            font-style: italic;
+            display: block;
+        }
+        
+        /* GRAMMAR RULES */
+        .grammar-rules {
+            background: var(--gray);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .rule-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #cbd5e0;
+        }
+        
+        .rule-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .rule-number {
+            min-width: 32px;
+            height: 32px;
+            background: var(--warning);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .rule-content h4 {
+            color: var(--ocean-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .rule-content p {
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        .rule-example {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 3px solid var(--sky-blue);
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+        
+        /* PRACTICE TASKS */
+        .task-container {
+            background: linear-gradient(135deg, #f8f9ff, #eef5ff);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid var(--sky-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .task-container::before {
+            content: "🎯";
+            position: absolute;
+            font-size: 6rem;
+            opacity: 0.08;
+            right: -15px;
+            top: -20px;
+            transform: rotate(15deg);
+        }
+        
+        .task-title {
+            font-size: 1.5rem;
+            color: var(--ocean-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+        
+        .task-instruction {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--warning);
+            font-weight: 500;
+        }
+        
+        /* MATCHING TASK */
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .matching-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .matching-item {
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid #e2e8f0;
+            font-weight: 500;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .matching-item:hover {
+            border-color: var(--sky-blue);
+            transform: translateX(5px);
+        }
+        
+        .matching-item.selected {
+            background: var(--sky-blue);
+            color: white;
+            border-color: var(--ocean-blue);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(58, 124, 165, 0.3);
+        }
+        
+        .matching-item.matched {
+            background: var(--success);
+            color: white;
+            border-color: #27ae60;
+            cursor: default;
+            animation: pulseMatch 0.4s ease;
+        }
+        
+        @keyframes pulseMatch {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .matching-line {
+            position: absolute;
+            height: 3px;
+            background: var(--warning);
+            border-radius: 2px;
+            z-index: 10;
+            pointer-events: none;
+            transform-origin: left center;
+            box-shadow: 0 0 5px rgba(255, 107, 53, 0.5);
+        }
+        
+        /* QUIZ TASK */
+        .quiz-question {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--ocean-blue);
+        }
+        
+        .quiz-question h4 {
+            margin-bottom: 15px;
+            color: var(--ocean-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .quiz-option {
+            padding: 14px 20px;
+            background: var(--gray);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--sky-blue);
+            background: #f0f7ff;
+            transform: translateX(3px);
+        }
+        
+        .quiz-option.selected {
+            background: var(--ocean-blue);
+            color: white;
+            border-color: var(--ocean-dark);
+        }
+        
+        .quiz-option.correct {
+            background: var(--success);
+            color: white;
+            border-color: #27ae60;
+            animation: correctPulse 0.5s ease;
+        }
+        
+        .quiz-option.incorrect {
+            background: #e53e3e;
+            color: white;
+            border-color: #c53030;
+            animation: incorrectShake 0.5s ease;
+        }
+        
+        @keyframes correctPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes incorrectShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .quiz-feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        /* DRAG & DROP */
+        .drag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .drag-source, .drag-target {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .drag-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--ocean-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--sky-blue);
+        }
+        
+        .draggable-item {
+            padding: 12px 15px;
+            background: var(--gray);
+            border-radius: 10px;
+            margin: 8px 0;
+            cursor: grab;
+            transition: var(--transition);
+            font-weight: 500;
+            border: 2px solid transparent;
+        }
+        
+        .draggable-item:active {
+            cursor: grabbing;
+        }
+        
+        .draggable-item:hover {
+            border-color: var(--sky-blue);
+            transform: translateX(3px);
+        }
+        
+        .draggable-item.dragging {
+            opacity: 0.8;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            z-index: 100;
+        }
+        
+        .drop-zone {
+            min-height: 60px;
+            border: 3px dashed #cbd5e0;
+            border-radius: 12px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-style: italic;
+            transition: var(--transition);
+            background: #f8fafc;
+        }
+        
+        .drop-zone.drag-over {
+            border-color: var(--warning);
+            background: #fff9f5;
+            color: var(--warning);
+            font-weight: 500;
+        }
+        
+        .drop-zone.filled {
+            border-style: solid;
+            border-color: var(--success);
+            background: #f0fff4;
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        /* BUTTONS & CONTROLS */
+        .btn {
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--warning), #ff8c5a);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 107, 53, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn.secondary {
+            background: var(--ocean-blue);
+            box-shadow: 0 4px 15px rgba(26, 74, 122, 0.3);
+        }
+        
+        .btn.secondary:hover {
+            background: var(--ocean-dark);
+            box-shadow: 0 7px 20px rgba(10, 37, 64, 0.4);
+        }
+        
+        .btn.outline {
+            background: transparent;
+            border: 2px solid var(--ocean-blue);
+            color: var(--ocean-blue);
+        }
+        
+        .btn.outline:hover {
+            background: var(--ocean-blue);
+            color: white;
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-large {
+            padding: 18px 45px;
+            font-size: 1.2rem;
+        }
+        
+        .task-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        /* PROGRESS & FEEDBACK */
+        .progress-section {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--sky-blue));
+            border-radius: 20px;
+            margin: 30px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-section::before {
+            content: "⭐";
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            right: -30px;
+            bottom: -40px;
+            transform: rotate(20deg);
+        }
+        
+        .progress-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .progress-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .completion-message {
+            background: white;
+            color: var(--ocean-dark);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 20px;
+            font-weight: 500;
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .completion-message.show {
+            display: block;
+        }
+        
+        .completion-message.success {
+            border-left: 4px solid var(--success);
+        }
+        
+        .completion-message.warning {
+            border-left: 4px solid var(--warning);
+        }
+        
+        /* ANIMATED ELEMENTS */
+        .wave-animation {
+            position: relative;
+            height: 60px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L1200 0L1200 120C1066.67 93.33 933.33 80 800 80C666.67 80 533.33 93.33 400 120L0 120Z' fill='%233a7ca5' opacity='0.3'/%3E%3C/svg%3E") repeat-x;
+            background-size: 1200px 120px;
+            animation: waveMove 15s linear infinite;
+        }
+        
+        .wave:nth-child(2) {
+            animation-duration: 18s;
+            opacity: 0.5;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L1200 0L1200 120C1066.67 93.33 933.33 80 800 80C666.67 80 533.33 93.33 400 120L0 120Z' fill='%231a4a7a' opacity='0.4'/%3E%3C/svg%3E") repeat-x;
+            background-size: 1200px 120px;
+            animation-direction: reverse;
+        }
+        
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-delay {
+            animation: float 3.5s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .matching-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .matching-item:hover {
+                transform: none;
+            }
+            
+            .drag-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .nato-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            }
+            
+            .numbers-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+            
+            .verbs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .time-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .task-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* AUDIO VISUALIZER (simulated) */
+        .audio-visualizer {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 40px;
+            gap: 3px;
+            margin: 15px 0;
+        }
+        
+        .audio-bar {
+            width: 6px;
+            background: var(--ocean-blue);
+            border-radius: 3px;
+            transition: height 0.1s ease;
+        }
+        
+        .audio-visualizer.playing .audio-bar {
+            animation: audioWave 0.5s ease infinite alternate;
+        }
+        
+        .audio-visualizer.playing .audio-bar:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+        
+        .audio-visualizer.playing .audio-bar:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes audioWave {
+            from { height: 5px; }
+            to { height: 35px; }
+        }
+        
+        /* CONFETTI ANIMATION FOR COMPLETION */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f00;
+            border-radius: 50%;
+            animation: confettiFall 5s ease-in-out forwards;
+            z-index: 1000;
+            opacity: 0;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="ship-icon">🚢</div>
+            <h1>Maritime English Foundation</h1>
+            <p class="subtitle">NATO Alphabet • Numbers • UTC Time • Basic Verbs</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">Lesson Progress: <span id="progressText">0%</span></p>
+        </header>
+        
+        <!-- SECTION 1: VOCABULARY BANK -->
+        <section class="section" id="vocabSection">
+            <h2 class="section-title">📚 Vocabulary Bank</h2>
+            
+            <div class="vocab-tabs">
+                <button class="vocab-tab active" data-tab="nato">
+                    <span>🔤</span> NATO Alphabet
+                </button>
+                <button class="vocab-tab" data-tab="numbers">
+                    <span>🔢</span> Numbers
+                </button>
+                <button class="vocab-tab" data-tab="time">
+                    <span>⏰</span> UTC Time
+                </button>
+                <button class="vocab-tab" data-tab="verbs">
+                    <span>⚓</span> Basic Verbs
+                </button>
+            </div>
+            
+            <!-- NATO ALPHABET CONTENT -->
+            <div class="vocab-content active" id="natoContent">
+                <p style="margin-bottom: 20px; font-weight: 500;">In maritime radio communication, we use the <strong>NATO Phonetic Alphabet</strong> to spell words clearly. Click any card to hear pronunciation!</p>
+                
+                <div class="nato-grid" id="natoGrid">
+                    <!-- NATO cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="maritime-context">
+                    <div class="context-title">📡 Maritime Context Example</div>
+                    <p>When reporting your vessel name "NORDIC STAR" over radio:</p>
+                    <div class="context-example">"This is NORDIC STAR: November-Oscar-Romeo-Delta-India-Charlie, Sierra-Tango-Alfa-Romeo"</div>
+                </div>
+            </div>
+            
+            <!-- NUMBERS CONTENT -->
+            <div class="vocab-content" id="numbersContent">
+                <p style="margin-bottom: 20px; font-weight: 500;">In maritime English, numbers are pronounced clearly to avoid confusion. Pay attention to special pronunciations!</p>
+                
+                <div class="numbers-grid" id="numbersGrid">
+                    <!-- Number cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="maritime-context">
+                    <div class="context-title">🌊 Maritime Context Examples</div>
+                    <p><strong>Depth:</strong> "Depth 15 meters" → "Depth one-five meters"</p>
+                    <p><strong>Speed:</strong> "Speed 12 knots" → "Speed one-two knots"</p>
+                    <p><strong>Coordinates:</strong> "Position 54°30'N" → "Position five-four degrees three-zero minutes North"</p>
+                </div>
+                
+                <div class="grammar-rules">
+                    <h3 style="margin-bottom: 15px; color: var(--ocean-dark);">📝 Number Pronunciation Rules</h3>
+                    <div class="rule-item">
+                        <div class="rule-number">1</div>
+                        <div class="rule-content">
+                            <h4>🗣️ Say digits separately</h4>
+                            <p>Never say "fifteen" for 15 in coordinates or depths. Say "one-five".</p>
+                            <div class="rule-example">15 meters → "one-five meters" (NOT "fifteen meters")</div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">2</div>
+                        <div class="rule-content">
+                            <h4>🔤 Special pronunciations</h4>
+                            <p>Some numbers have special forms to avoid confusion on radio:</p>
+                            <div class="rule-example">
+                                3 → "tree"<br>
+                                4 → "fower"<br>
+                                5 → "fife"<br>
+                                9 → "niner"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">3</div>
+                        <div class="rule-content">
+                            <h4>⚓ Decimal points</h4>
+                            <p>Use "decimal" or "point" clearly:</p>
+                            <div class="rule-example">3.5 meters → "three decimal five meters"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TIME CONTENT -->
+            <div class="vocab-content" id="timeContent">
+                <p style="margin-bottom: 20px; font-weight: 500;">All maritime communications use <strong>UTC (Coordinated Universal Time)</strong>. Time is always spoken in 24-hour format, digit by digit.</p>
+                
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="hour-marks" id="hourMarks"></div>
+                        <div class="hour-hand" id="hourHand"></div>
+                        <div class="minute-hand" id="minuteHand"></div>
+                    </div>
+                </div>
+                
+                <div class="time-display" id="timeDisplay">14:30 UTC</div>
+                
+                <div class="time-controls">
+                    <button class="time-btn" id="prevHour">⬅️ Previous Hour</button>
+                    <button class="time-btn secondary" id="resetTime">🔄 Reset to Now</button>
+                    <button class="time-btn" id="nextHour">Next Hour ➡️</button>
+                </div>
+                
+                <div class="grammar-rules">
+                    <h3 style="margin-bottom: 15px; color: var(--ocean-dark);">📝 Time Communication Rules</h3>
+                    <div class="rule-item">
+                        <div class="rule-number">1</div>
+                        <div class="rule-content">
+                            <h4>⏰ Always use 24-hour format</h4>
+                            <p>Never use AM/PM in maritime communications.</p>
+                            <div class="rule-example">2:30 PM → 14:30 → "one-four three-zero"</div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">2</div>
+                        <div class="rule-content">
+                            <h4>🔤 Say each digit separately</h4>
+                            <p>Time is always pronounced digit by digit, not as a number.</p>
+                            <div class="rule-example">
+                                09:15 → "zero-niner one-five"<br>
+                                23:45 → "two-three four-five"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">3</div>
+                        <div class="rule-content">
+                            <h4>🌍 Always specify UTC</h4>
+                            <p>Always add "UTC" or "Zulu time" after the time to avoid confusion.</p>
+                            <div class="rule-example">"ETA 1830 UTC" → "Estimated time of arrival one-eight three-zero UTC"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VERBS CONTENT -->
+            <div class="vocab-content" id="verbsContent">
+                <p style="margin-bottom: 20px; font-weight: 500;">These basic verbs are essential for maritime communication. Click to hear pronunciation and see examples!</p>
+                
+                <div class="verbs-grid" id="verbsGrid">
+                    <!-- Verb cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="grammar-rules">
+                    <h3 style="margin-bottom: 15px; color: var(--ocean-dark);">📝 Verb Usage Rules</h3>
+                    <div class="rule-item">
+                        <div class="rule-number">1</div>
+                        <div class="rule-content">
+                            <h4>✅ Use imperative for instructions</h4>
+                            <p>In urgent situations, use direct commands (imperative form).</p>
+                            <div class="rule-example">
+                                "Stop engine!"<br>
+                                "Alter course to starboard!"<br>
+                                "Reduce speed!"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">2</div>
+                        <div class="rule-content">
+                            <h4>🗣️ Use present simple for reports</h4>
+                            <p>When reporting current situation, use present simple tense.</p>
+                            <div class="rule-example">
+                                "I am flooding" (NOT "I flood")<br>
+                                "We are drifting" (NOT "We drift")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-number">3</div>
+                        <div class="rule-content">
+                            <h4>🔄 Use "will" for intentions</h4>
+                            <p>When stating your next action, use "will + verb".</p>
+                            <div class="rule-example">
+                                "I will alter course to port"<br>
+                                "We will reduce speed to 8 knots"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="wave-animation">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        
+        <!-- SECTION 2: PRACTICE TASKS -->
+        <section class="section" id="practiceSection">
+            <h2 class="section-title">🎯 Practice Tasks</h2>
+            <p style="margin-bottom: 25px; font-weight: 500;">Test your knowledge with these interactive exercises. Complete all tasks to master the basics!</p>
+            
+            <!-- TASK 1: NATO MATCHING -->
+            <div class="task-container">
+                <div class="task-title">🔤 Task 1: Match NATO Letters</div>
+                <div class="task-instruction">Connect each letter with its correct NATO word. Click a letter, then click its matching word.</div>
+                
+                <div class="matching-container" id="matchingContainer">
+                    <div class="matching-column" id="lettersColumn">
+                        <!-- Letters will be added by JS -->
+                    </div>
+                    <div class="matching-column" id="wordsColumn">
+                        <!-- Words will be added by JS -->
+                    </div>
+                </div>
+                
+                <div class="task-controls">
+                    <button class="btn outline" id="resetMatching">🔄 Reset</button>
+                    <button class="btn" id="checkMatching">✅ Check Answers</button>
+                </div>
+                
+                <div class="quiz-feedback" id="matchingFeedback"></div>
+            </div>
+            
+            <!-- TASK 2: TIME QUIZ -->
+            <div class="task-container">
+                <div class="task-title">⏰ Task 2: UTC Time Quiz</div>
+                <div class="task-instruction">Select the correct way to pronounce each time in maritime radio communication.</div>
+                
+                <div class="quiz-question">
+                    <h4>❓ How do you say "09:15 UTC" on the radio?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">A) Nine fifteen UTC</div>
+                        <div class="quiz-option" data-correct="true">B) Zero-niner one-five UTC</div>
+                        <div class="quiz-option" data-correct="false">C) Oh-nine fifteen UTC</div>
+                        <div class="quiz-option" data-correct="false">D) Nine-one-five UTC</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h4>❓ How do you report depth "3.5 meters"?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">A) Three point five meters</div>
+                        <div class="quiz-option" data-correct="true">B) Tree decimal five meters</div>
+                        <div class="quiz-option" data-correct="false">C) Three five meters</div>
+                        <div class="quiz-option" data-correct="false">D) Decimal three five meters</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h4>❓ Which is the correct pronunciation for number 9 in coordinates?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">A) Nine</div>
+                        <div class="quiz-option" data-correct="true">B) Niner</div>
+                        <div class="quiz-option" data-correct="false">C) Ninety</div>
+                        <div class="quiz-option" data-correct="false">D) Nine-oh</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="task-controls">
+                    <button class="btn" id="checkQuiz">✅ Check All Answers</button>
+                    <button class="btn outline" id="nextTask">Next Task ➡️</button>
+                </div>
+            </div>
+            
+            <!-- TASK 3: VERB DRAG & DROP -->
+            <div class="task-container">
+                <div class="task-title">⚓ Task 3: Complete the Sentences</div>
+                <div class="task-instruction">Drag the correct verb to complete each maritime sentence.</div>
+                
+                <div class="drag-container">
+                    <div class="drag-source">
+                        <div class="drag-title">🧩 Verbs to Use</div>
+                        <div class="draggable-item" draggable="true" data-verb="proceed">proceed</div>
+                        <div class="draggable-item" draggable="true" data-verb="reduce">reduce</div>
+                        <div class="draggable-item" draggable="true" data-verb="alter">alter</div>
+                        <div class="draggable-item" draggable="true" data-verb="maintain">maintain</div>
+                        <div class="draggable-item" draggable="true" data-verb="report">report</div>
+                    </div>
+                    
+                    <div class="drag-target">
+                        <div class="drag-title">📝 Complete the Sentences</div>
+                        
+                        <div style="margin: 15px 0; font-weight: 500;">1. "I will ______ course to starboard."</div>
+                        <div class="drop-zone" data-sentence="1" data-correct="alter">Drop verb here</div>
+                        
+                        <div style="margin: 15px 0; font-weight: 500;">2. "We must ______ speed to 8 knots."</div>
+                        <div class="drop-zone" data-sentence="2" data-correct="reduce">Drop verb here</div>
+                        
+                        <div style="margin: 15px 0; font-weight: 500;">3. "Please ______ your position every 10 minutes."</div>
+                        <div class="drop-zone" data-sentence="3" data-correct="report">Drop verb here</div>
+                        
+                        <div style="margin: 15px 0; font-weight: 500;">4. "We will ______ to anchorage."</div>
+                        <div class="drop-zone" data-sentence="4" data-correct="proceed">Drop verb here</div>
+                        
+                        <div style="margin: 15px 0; font-weight: 500;">5. "______ present course and speed."</div>
+                        <div class="drop-zone" data-sentence="5" data-correct="maintain">Drop verb here</div>
+                    </div>
+                </div>
+                
+                <div class="task-controls">
+                    <button class="btn outline" id="resetDrag">🔄 Reset</button>
+                    <button class="btn" id="checkDrag">✅ Check Answers</button>
+                </div>
+                
+                <div class="quiz-feedback" id="dragFeedback"></div>
+            </div>
+        </section>
+        
+        <!-- PROGRESS & COMPLETION -->
+        <section class="section" id="completionSection" style="display: none;">
+            <h2 class="section-title">🎉 Lesson Complete!</h2>
+            
+            <div class="progress-section">
+                <div class="progress-title">Excellent Progress!</div>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">You've mastered the fundamentals of maritime radio communication.</p>
+                
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="scoreValue">0</span>
+                        <span class="stat-label">Points Earned</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="accuracyValue">0%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">New Words</span>
+                    </div>
+                </div>
+                
+                <button class="btn btn-large" id="restartLesson" style="margin-top: 15px;">
+                    🔄 Practice Again
+                </button>
+            </div>
+            
+            <div class="completion-message success" id="successMessage">
+                <strong>✅ Well done!</strong> You're ready to practice real maritime communications. 
+                Remember: clarity and precision save lives at sea. Keep practicing the NATO alphabet and time pronunciation daily!
+            </div>
+            
+            <div class="completion-message warning" id="improveMessage" style="display: none;">
+                <strong>💡 Good effort!</strong> Review the vocabulary bank and try the tasks again. 
+                Focus on: <span id="weakAreas">NATO alphabet pronunciation and time format</span>. 
+                Practice makes perfect!
+            </div>
+        </section>
+        
+        <div style="text-align: center; margin-top: 30px; color: rgba(255,255,255,0.85);">
+            <p>🚢 Maritime English Foundation Lesson • Prepared for Yaroslava • December 2025</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">Next lesson: Weather Reports & Navigational Warnings</p>
+        </div>
+    </div>
+    
+    <script>
+        // ==================== DATA ====================
+        const natoAlphabet = [
+            { letter: 'A', word: 'Alfa', pronounce: '/ˈæl.fə/' },
+            { letter: 'B', word: 'Bravo', pronounce: '/ˈbrɑː.vəʊ/' },
+            { letter: 'C', word: 'Charlie', pronounce: '/ˈtʃɑː.li/' },
+            { letter: 'D', word: 'Delta', pronounce: '/ˈdel.tə/' },
+            { letter: 'E', word: 'Echo', pronounce: '/ˈek.əʊ/' },
+            { letter: 'F', word: 'Foxtrot', pronounce: '/ˈfɒks.trɒt/' },
+            { letter: 'G', word: 'Golf', pronounce: '/ɡɒlf/' },
+            { letter: 'H', word: 'Hotel', pronounce: '/həʊˈtel/' },
+            { letter: 'I', word: 'India', pronounce: '/ˈɪn.di.ə/' },
+            { letter: 'J', word: 'Juliett', pronounce: '/ˈdʒuː.li.et/' },
+            { letter: 'K', word: 'Kilo', pronounce: '/ˈkiː.ləʊ/' },
+            { letter: 'L', word: 'Lima', pronounce: '/ˈliː.mə/' },
+            { letter: 'M', word: 'Mike', pronounce: '/maɪk/' },
+            { letter: 'N', word: 'November', pronounce: '/nəʊˈvem.bər/' },
+            { letter: 'O', word: 'Oscar', pronounce: '/ˈɒs.kə/' },
+            { letter: 'P', word: 'Papa', pronounce: '/pəˈpɑː/' },
+            { letter: 'Q', word: 'Quebec', pronounce: '/kwɪˈbek/' },
+            { letter: 'R', word: 'Romeo', pronounce: '/ˈrəʊ.mi.əʊ/' },
+            { letter: 'S', word: 'Sierra', pronounce: '/siˈer.ə/' },
+            { letter: 'T', word: 'Tango', pronounce: '/ˈtæŋ.ɡəʊ/' },
+            { letter: 'U', word: 'Uniform', pronounce: '/ˈjuː.nɪ.fɔːm/' },
+            { letter: 'V', word: 'Victor', pronounce: '/ˈvɪk.tər/' },
+            { letter: 'W', word: 'Whiskey', pronounce: '/ˈwɪs.ki/' },
+            { letter: 'X', word: 'X-ray', pronounce: '/ˈeks.reɪ/' },
+            { letter: 'Y', word: 'Yankee', pronounce: '/ˈjæŋ.ki/' },
+            { letter: 'Z', word: 'Zulu', pronounce: '/ˈzuː.luː/' }
+        ];
+        
+        const maritimeNumbers = [
+            { value: '0', word: 'zero', special: 'zero' },
+            { value: '1', word: 'one', special: 'wun' },
+            { value: '2', word: 'two', special: 'too' },
+            { value: '3', word: 'three', special: 'tree' },
+            { value: '4', word: 'four', special: 'fower' },
+            { value: '5', word: 'five', special: 'fife' },
+            { value: '6', word: 'six', special: 'six' },
+            { value: '7', word: 'seven', special: 'seven' },
+            { value: '8', word: 'eight', special: 'ait' },
+            { value: '9', word: 'nine', special: 'niner' }
+        ];
+        
+        const maritimeVerbs = [
+            { en: 'proceed', ru: 'следовать', example: 'Proceed to anchorage', icon: '➡️' },
+            { en: 'reduce', ru: 'уменьшать', example: 'Reduce speed to 8 knots', icon: '📉' },
+            { en: 'increase', ru: 'увеличивать', example: 'Increase speed to 12 knots', icon: '📈' },
+            { en: 'alter', ru: 'менять (курс)', example: 'Alter course to starboard', icon: '🔄' },
+            { en: 'maintain', ru: 'сохранять', example: 'Maintain present course', icon: '⚓' },
+            { en: 'report', ru: 'сообщать', example: 'Report your position', icon: '📡' },
+            { en: 'anchor', ru: 'становиться на якорь', example: 'Anchor in position Alpha', icon: '⚓' },
+            { en: 'depart', ru: 'отправляться', example: 'Depart from berth at 1400 UTC', icon: '🚢' },
+            { en: 'approach', ru: 'приближаться', example: 'Approaching fairway', icon: '🔍' },
+            { en: 'stop', ru: 'останавливать', example: 'Stop engine immediately', icon: '🛑' }
+        ];
+        
+        // ==================== STATE ====================
+        let currentTab = 'nato';
+        let currentTime = { hours: 14, minutes: 30 };
+        let progress = 0;
+        let score = 0;
+        let matchingState = { selected: null, matched: [] };
+        let quizAnswers = {};
+        let dragState = {};
+        
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate NATO alphabet cards
+            generateNatoGrid();
+            
+            // Generate number cards
+            generateNumbersGrid();
+            
+            // Generate verb cards
+            generateVerbsGrid();
+            
+            // Generate clock hour marks
+            generateClockMarks();
+            
+            // Setup tab switching
+            setupTabSwitching();
+            
+            // Setup time controls
+            setupTimeControls();
+            
+            // Setup NATO card click
+            setupNatoCardClick();
+            
+            // Setup number card click
+            setupNumberCardClick();
+            
+            // Setup verb card click
+            setupVerbCardClick();
+            
+            // Setup matching task
+            setupMatchingTask();
+            
+            // Setup quiz task
+            setupQuizTask();
+            
+            // Setup drag & drop task
+            setupDragDropTask();
+            
+            // Setup progress tracking
+            setupProgressTracking();
+            
+            // Animate section entrances
+            animateSectionEntrances();
+        });
+        
+        // ==================== GENERATION FUNCTIONS ====================
+        function generateNatoGrid() {
+            const grid = document.getElementById('natoGrid');
+            natoAlphabet.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'nato-card';
+                card.innerHTML = `
+                    <span class="nato-letter">${item.letter}</span>
+                    <span class="nato-word">${item.word}</span>
+                    <span class="nato-pronounce">${item.pronounce}</span>
+                `;
+                card.dataset.letter = item.letter;
+                card.dataset.word = item.word;
+                grid.appendChild(card);
+            });
+        }
+        
+        function generateNumbersGrid() {
+            const grid = document.getElementById('numbersGrid');
+            maritimeNumbers.forEach(num => {
+                const card = document.createElement('div');
+                card.className = 'number-card';
+                card.innerHTML = `
+                    <span class="number-value">${num.value}</span>
+                    <span class="number-word">${num.special}</span>
+                `;
+                card.dataset.value = num.value;
+                card.dataset.special = num.special;
+                grid.appendChild(card);
+            });
+        }
+        
+        function generateVerbsGrid() {
+            const grid = document.getElementById('verbsGrid');
+            maritimeVerbs.forEach(verb => {
+                const card = document.createElement('div');
+                card.className = 'verb-card';
+                card.innerHTML = `
+                    <span class="verb-icon">${verb.icon}</span>
+                    <span class="verb-en">${verb.en}</span>
+                    <span class="verb-ru">${verb.ru}</span>
+                    <span class="verb-example">"${verb.example}"</span>
+                `;
+                card.dataset.verb = verb.en;
+                grid.appendChild(card);
+            });
+        }
+        
+        function generateClockMarks() {
+            const container = document.getElementById('hourMarks');
+            for (let i = 0; i < 12; i++) {
+                const mark = document.createElement('div');
+                mark.className = 'hour-mark';
+                mark.style.transform = `rotate(${i * 30}deg) translateX(-50%)`;
+                container.appendChild(mark);
+            }
+        }
+        
+        // ==================== INTERACTION SETUP ====================
+        function setupTabSwitching() {
+            document.querySelectorAll('.vocab-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Update active tab
+                    document.querySelectorAll('.vocab-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabName = tab.dataset.tab;
+                    document.querySelectorAll('.vocab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`${tabName}Content`).classList.add('active');
+                    
+                    // Update progress
+                    updateProgress(15);
+                });
+            });
+        }
+        
+        function setupTimeControls() {
+            document.getElementById('prevHour').addEventListener('click', () => {
+                currentTime.hours = (currentTime.hours - 1 + 24) % 24;
+                updateClockDisplay();
+            });
+            
+            document.getElementById('nextHour').addEventListener('click', () => {
+                currentTime.hours = (currentTime.hours + 1) % 24;
+                updateClockDisplay();
+            });
+            
+            document.getElementById('resetTime').addEventListener('click', () => {
+                const now = new Date();
+                currentTime.hours = now.getUTCHours();
+                currentTime.minutes = now.getUTCMinutes();
+                updateClockDisplay();
+            });
+            
+            // Initial display
+            updateClockDisplay();
+        }
+        
+        function updateClockDisplay() {
+            // Update digital display
+            const hours = currentTime.hours.toString().padStart(2, '0');
+            const minutes = currentTime.minutes.toString().padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = `${hours}:${minutes} UTC`;
+            
+            // Update analog clock
+            const hourDeg = (currentTime.hours % 12) * 30 + currentTime.minutes * 0.5;
+            const minuteDeg = currentTime.minutes * 6;
+            
+            document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+        }
+        
+        function setupNatoCardClick() {
+            document.querySelectorAll('.nato-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Visual feedback
+                    this.classList.add('playing');
+                    setTimeout(() => this.classList.remove('playing'), 600);
+                    
+                    // Simulate audio playback
+                    showAudioFeedback(this.dataset.word);
+                    
+                    // Update progress
+                    updateProgress(5);
+                });
+            });
+        }
+        
+        function setupNumberCardClick() {
+            document.querySelectorAll('.number-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 300);
+                    
+                    // Show pronunciation
+                    showAudioFeedback(`Number ${this.dataset.value}: ${this.dataset.special}`);
+                    
+                    // Update progress
+                    updateProgress(3);
+                });
+            });
+        }
+        
+        function setupVerbCardClick() {
+            document.querySelectorAll('.verb-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Visual feedback
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                    
+                    // Show example usage
+                    const verb = this.dataset.verb;
+                    const example = this.querySelector('.verb-example').textContent;
+                    showAudioFeedback(`${verb}: ${example}`);
+                    
+                    // Update progress
+                    updateProgress(4);
+                });
+            });
+        }
+        
+        function showAudioFeedback(text) {
+            // Create visual audio feedback
+            const visualizer = document.createElement('div');
+            visualizer.className = 'audio-visualizer playing';
+            visualizer.style.margin = '10px auto';
+            visualizer.style.width = '120px';
+            
+            for (let i = 0; i < 8; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'audio-bar';
+                bar.style.height = `${Math.random() * 30 + 5}px`;
+                visualizer.appendChild(bar);
+            }
+            
+            // Insert after the clicked element's parent
+            const parent = document.querySelector('.vocab-content.active');
+            parent.insertBefore(visualizer, parent.firstChild);
+            
+            // Remove after animation
+            setTimeout(() => {
+                visualizer.classList.remove('playing');
+                setTimeout(() => visualizer.remove(), 500);
+            }, 1500);
+            
+            // Show text feedback
+            const feedback = document.createElement('div');
+            feedback.style.cssText = `
+                background: var(--ocean-blue);
+                color: white;
+                padding: 8px 15px;
+                border-radius: 20px;
+                text-align: center;
+                margin: 10px auto;
+                max-width: 300px;
+                font-weight: 500;
+                animation: fadeIn 0.3s ease;
+            `;
+            feedback.textContent = `🔊 "${text}"`;
+            parent.insertBefore(feedback, parent.firstChild);
+            
+            setTimeout(() => feedback.remove(), 2500);
+        }
+        
+        // ==================== MATCHING TASK ====================
+        function setupMatchingTask() {
+            const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            const words = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel'];
+            
+            // Shuffle words for challenge
+            const shuffledWords = [...words].sort(() => Math.random() - 0.5);
+            
+            const lettersCol = document.getElementById('lettersColumn');
+            const wordsCol = document.getElementById('wordsColumn');
+            
+            // Create letter items
+            letters.forEach(letter => {
+                const item = document.createElement('div');
+                item.className = 'matching-item';
+                item.textContent = letter;
+                item.dataset.type = 'letter';
+                item.dataset.value = letter;
+                item.addEventListener('click', () => handleMatchingClick(item, 'letter'));
+                lettersCol.appendChild(item);
+            });
+            
+            // Create word items
+            shuffledWords.forEach(word => {
+                const item = document.createElement('div');
+                item.className = 'matching-item';
+                item.textContent = word;
+                item.dataset.type = 'word';
+                item.dataset.value = word;
+                item.addEventListener('click', () => handleMatchingClick(item, 'word'));
+                wordsCol.appendChild(item);
+            });
+            
+            // Reset button
+            document.getElementById('resetMatching').addEventListener('click', resetMatching);
+            
+            // Check button
+            document.getElementById('checkMatching').addEventListener('click', checkMatching);
+        }
+        
+        function handleMatchingClick(item, type) {
+            // Ignore if already matched
+            if (item.classList.contains('matched')) return;
+            
+            // If nothing selected, select this item
+            if (!matchingState.selected) {
+                matchingState.selected = { item, type, value: item.dataset.value };
+                item.classList.add('selected');
+                return;
+            }
+            
+            // If same type clicked, deselect
+            if (matchingState.selected.type === type) {
+                matchingState.selected.item.classList.remove('selected');
+                matchingState.selected = { item, type, value: item.dataset.value };
+                item.classList.add('selected');
+                return;
+            }
+            
+            // Different types - check if match
+            const correctMatch = 
+                (matchingState.selected.type === 'letter' && type === 'word') ||
+                (matchingState.selected.type === 'word' && type === 'letter');
+                
+            if (correctMatch) {
+                // Check if values match (case-insensitive)
+                const isMatch = matchingState.selected.value.toUpperCase() === 
+                               natoAlphabet.find(n => n.word.toUpperCase() === item.dataset.value.toUpperCase())?.letter ||
+                               item.dataset.value.toUpperCase() === 
+                               natoAlphabet.find(n => n.letter.toUpperCase() === matchingState.selected.value.toUpperCase())?.word?.toUpperCase();
+                
+                if (isMatch) {
+                    // Correct match!
+                    item.classList.add('matched', 'selected');
+                    matchingState.selected.item.classList.add('matched', 'selected');
+                    matchingState.matched.push({
+                        letter: matchingState.selected.type === 'letter' ? matchingState.selected.value : item.dataset.value,
+                        word: matchingState.selected.type === 'word' ? matchingState.selected.value : item.dataset.value
+                    });
+                    
+                    // Visual feedback
+                    createConfetti(item);
+                    
+                    // Update progress
+                    updateProgress(10);
+                } else {
+                    // Wrong match - show feedback
+                    showMatchingFeedback('❌ Not a match! Try again.', false);
+                    setTimeout(() => {
+                        item.classList.remove('selected');
+                        matchingState.selected.item.classList.remove('selected');
+                    }, 800);
+                }
+            }
+            
+            // Reset selection
+            matchingState.selected = null;
+        }
+        
+        function resetMatching() {
+            document.querySelectorAll('.matching-item').forEach(item => {
+                item.classList.remove('selected', 'matched');
+            });
+            matchingState = { selected: null, matched: [] };
+            document.getElementById('matchingFeedback').style.display = 'none';
+        }
+        
+        function checkMatching() {
+            const total = 8;
+            const correct = matchingState.matched.length;
+            const feedback = document.getElementById('matchingFeedback');
+            
+            if (correct === total) {
+                feedback.textContent = `✅ Perfect! All ${total} matches correct!`;
+                feedback.className = 'quiz-feedback correct';
+                score += 20;
+                updateProgress(15);
+                createConfetti(document.getElementById('matchingContainer'));
+            } else {
+                feedback.textContent = `⚠️ ${correct} out of ${total} correct. Review the NATO alphabet and try again!`;
+                feedback.className = 'quiz-feedback incorrect';
+            }
+            feedback.style.display = 'block';
+        }
+        
+        function showMatchingFeedback(message, isCorrect) {
+            const feedback = document.getElementById('matchingFeedback');
+            feedback.textContent = message;
+            feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.style.display = 'block';
+            setTimeout(() => {
+                if (feedback.textContent === message) {
+                    feedback.style.display = 'none';
+                }
+            }, 3000);
+        }
+        
+        // ==================== QUIZ TASK ====================
+        function setupQuizTask() {
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Deselect siblings
+                    this.parentElement.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Select this option
+                    this.classList.add('selected');
+                    
+                    // Store answer
+                    const questionIndex = Array.from(this.closest('.quiz-question').parentElement.children)
+                        .indexOf(this.closest('.quiz-question'));
+                    quizAnswers[questionIndex] = this.dataset.correct === 'true';
+                });
+            });
+            
+            document.getElementById('checkQuiz').addEventListener('click', checkQuiz);
+            document.getElementById('nextTask').addEventListener('click', () => {
+                document.querySelector('.task-container:nth-child(3)').scrollIntoView({ behavior: 'smooth' });
+                updateProgress(10);
+            });
+        }
+        
+        function checkQuiz() {
+            let correctCount = 0;
+            const questions = document.querySelectorAll('.quiz-question');
+            
+            questions.forEach((question, index) => {
+                const selected = question.querySelector('.quiz-option.selected');
+                const feedback = question.querySelector('.quiz-feedback');
+                const isCorrect = selected && selected.dataset.correct === 'true';
+                
+                // Show feedback
+                if (selected) {
+                    if (isCorrect) {
+                        selected.classList.add('correct');
+                        feedback.textContent = '✅ Correct!';
+                        feedback.className = 'quiz-feedback correct';
+                        correctCount++;
+                        score += 5;
+                    } else {
+                        selected.classList.add('incorrect');
+                        // Highlight correct answer
+                        question.querySelector('.quiz-option[data-correct="true"]').classList.add('correct');
+                        feedback.textContent = '❌ Incorrect. Review the time pronunciation rules.';
+                        feedback.className = 'quiz-feedback incorrect';
+                    }
+                    feedback.style.display = 'block';
+                } else {
+                    feedback.textContent = '⚠️ Please select an answer';
+                    feedback.className = 'quiz-feedback incorrect';
+                    feedback.style.display = 'block';
+                }
+            });
+            
+            // Update progress and score
+            if (correctCount === 3) {
+                updateProgress(15);
+                createConfetti(document.querySelector('.task-container:nth-child(2)'));
+            } else if (correctCount >= 2) {
+                updateProgress(10);
+            } else {
+                updateProgress(5);
+            }
+        }
+        
+        // ==================== DRAG & DROP TASK ====================
+        function setupDragDropTask() {
+            // Make items draggable
+            document.querySelectorAll('.draggable-item').forEach(item => {
+                item.addEventListener('dragstart', dragStart);
+                item.addEventListener('dragend', dragEnd);
+            });
+            
+            // Setup drop zones
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.addEventListener('dragover', dragOver);
+                zone.addEventListener('dragleave', dragLeave);
+                zone.addEventListener('drop', drop);
+            });
+            
+            // Buttons
+            document.getElementById('resetDrag').addEventListener('click', resetDrag);
+            document.getElementById('checkDrag').addEventListener('click', checkDrag);
+        }
+        
+        function dragStart(e) {
+            e.dataTransfer.setData('verb', this.dataset.verb);
+            setTimeout(() => this.classList.add('dragging'), 0);
+        }
+        
+        function dragEnd() {
+            this.classList.remove('dragging');
+        }
+        
+        function dragOver(e) {
+            e.preventDefault();
+            this.classList.add('drag-over');
+        }
+        
+        function dragLeave() {
+            this.classList.remove('drag-over');
+        }
+        
+        function drop(e) {
+            e.preventDefault();
+            this.classList.remove('drag-over');
+            
+            const verb = e.dataTransfer.getData('verb');
+            if (verb) {
+                // Clear previous content
+                this.innerHTML = '';
+                
+                // Add the verb
+                const verbEl = document.createElement('div');
+                verbEl.textContent = verb;
+                verbEl.style.fontWeight = '600';
+                verbEl.style.color = 'var(--ocean-blue)';
+                this.appendChild(verbEl);
+                
+                // Mark as filled
+                this.classList.add('filled');
+                
+                // Store answer
+                const sentenceId = this.dataset.sentence;
+                dragState[sentenceId] = {
+                    answer: verb,
+                    correct: this.dataset.correct
+                };
+                
+                // Visual feedback
+                this.style.borderColor = 'var(--success)';
+                this.style.backgroundColor = '#f0fff4';
+                
+                // Update progress
+                updateProgress(3);
+            }
+        }
+        
+        function resetDrag() {
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.innerHTML = 'Drop verb here';
+                zone.className = 'drop-zone';
+            });
+            dragState = {};
+            document.getElementById('dragFeedback').style.display = 'none';
+        }
+        
+        function checkDrag() {
+            let correctCount = 0;
+            const total = Object.keys(dragState).length;
+            
+            // Check each answer
+            Object.entries(dragState).forEach(([sentenceId, { answer, correct }]) => {
+                const zone = document.querySelector(`.drop-zone[data-sentence="${sentenceId}"]`);
+                if (answer === correct) {
+                    zone.style.borderColor = 'var(--success)';
+                    zone.style.backgroundColor = '#d4edda';
+                    correctCount++;
+                    score += 4;
+                } else {
+                    zone.style.borderColor = '#e53e3e';
+                    zone.style.backgroundColor = '#fff5f5';
+                }
+            });
+            
+            // Show feedback
+            const feedback = document.getElementById('dragFeedback');
+            if (correctCount === 5) {
+                feedback.textContent = `✅ Excellent! All 5 sentences correct!`;
+                feedback.className = 'quiz-feedback correct';
+                updateProgress(15);
+                createConfetti(document.querySelector('.task-container:nth-child(3)'));
+            } else if (correctCount >= 3) {
+                feedback.textContent = `✅ Good job! ${correctCount} out of 5 correct. Review the verb usage rules.`;
+                feedback.className = 'quiz-feedback correct';
+                updateProgress(10);
+            } else {
+                feedback.textContent = `⚠️ ${correctCount} out of 5 correct. Review the basic verbs and their usage.`;
+                feedback.className = 'quiz-feedback incorrect';
+                updateProgress(5);
+            }
+            feedback.style.display = 'block';
+        }
+        
+        // ==================== PROGRESS & COMPLETION ====================
+        function setupProgressTracking() {
+            // Initial progress update
+            updateProgress(0);
+        }
+        
+        function updateProgress(amount) {
+            progress = Math.min(100, progress + amount);
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
+            
+            // Show completion section when done
+            if (progress >= 95 && document.getElementById('completionSection').style.display === 'none') {
+                setTimeout(showCompletion, 800);
+            }
+        }
+        
+        function showCompletion() {
+            // Hide practice section
+            document.getElementById('practiceSection').style.opacity = '0.6';
+            document.getElementById('practiceSection').style.pointerEvents = 'none';
+            
+            // Show completion section
+            const completionSection = document.getElementById('completionSection');
+            completionSection.style.display = 'block';
+            completionSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Calculate results
+            const accuracy = Math.min(100, Math.round((score / 60) * 100));
+            document.getElementById('scoreValue').textContent = score;
+            document.getElementById('accuracyValue').textContent = `${accuracy}%`;
+            
+            // Show appropriate message
+            if (accuracy >= 80) {
+                document.getElementById('successMessage').classList.add('show');
+            } else {
+                document.getElementById('improveMessage').style.display = 'block';
+                document.getElementById('improveMessage').classList.add('show');
+                
+                // Identify weak areas
+                const weakAreas = [];
+                if (matchingState.matched.length < 6) weakAreas.push('NATO alphabet');
+                if (Object.values(quizAnswers).filter(a => a).length < 2) weakAreas.push('time pronunciation');
+                if (Object.values(dragState).filter(d => d.answer === d.correct).length < 3) weakAreas.push('verb usage');
+                
+                document.getElementById('weakAreas').textContent = weakAreas.join(', ') || 'all topics';
+            }
+            
+            // Restart button
+            document.getElementById('restartLesson').addEventListener('click', () => {
+                location.reload();
+            });
+            
+            // Create celebration confetti
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createConfetti(document.body), i * 50);
+            }
+        }
+        
+        function createConfetti(element) {
+            const colors = ['#ff6b35', '#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e74c3c'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.width = `${Math.random() * 8 + 4}px`;
+            confetti.style.height = confetti.style.width;
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(confetti);
+            
+            // Remove after animation
+            setTimeout(() => confetti.remove(), 5000);
+        }
+        
+        function animateSectionEntrances() {
+            // Sections already have CSS animations, but we can enhance
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 300 + index * 150);
+            });
+        }
+    </script>
+</body>
+</html>

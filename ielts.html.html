@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Pie Charts: Complete Practice Pack</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border-radius: 20px;
+      padding: 30px;
+      border: 3px solid #8ace00;
+      box-shadow: 0 0 30px rgba(138, 206, 0, 0.3);
+    }
+
+    .main-title {
+      text-align: center;
+      color: #8ace00;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(138, 206, 0, 0.5);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #cccccc;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #333;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 12px 24px;
+      background: #222;
+      border: 2px solid #333;
+      border-radius: 10px;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-btn:hover {
+      border-color: #8ace00;
+      background: #2a2a2a;
+    }
+
+    .nav-btn.active {
+      background: #8ace00;
+      color: #000;
+      border-color: #8ace00;
+      box-shadow: 0 0 15px rgba(138, 206, 0, 0.4);
+    }
+
+    /* Task Sections */
+    .task-section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .task-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .task-title {
+      color: #8ace00;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .task-instruction {
+      background: rgba(138, 206, 0, 0.1);
+      border-left: 4px solid #8ace00;
+      padding: 15px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: #222;
+      border-radius: 15px;
+      padding: 20px;
+      border: 2px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: #8ace00;
+      box-shadow: 0 5px 20px rgba(138, 206, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #333;
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+    }
+
+    .card-title {
+      color: #8ace00;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* Phrase Lists */
+    .phrase-list {
+      list-style: none;
+    }
+
+    .phrase-list li {
+      padding: 10px 12px;
+      margin: 8px 0;
+      background: #2a2a2a;
+      border-left: 3px solid #8ace00;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .phrase-list li:hover {
+      background: #333;
+      border-left-color: #5a9e00;
+      padding-left: 16px;
+    }
+
+    .phrase-list li.selected {
+      background: rgba(138, 206, 0, 0.2);
+      border-left-color: #8ace00;
+      border-left-width: 5px;
+    }
+
+    .phrase-list li.correct {
+      background: rgba(74, 222, 128, 0.2);
+      border-left-color: #4ade80;
+      animation: pulse 0.5s ease;
+    }
+
+    .phrase-list li.incorrect {
+      background: rgba(248, 113, 113, 0.2);
+      border-left-color: #f87171;
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    /* Interactive Elements */
+    .interactive-box {
+      background: #222;
+      border: 2px solid #333;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .interactive-box h4 {
+      color: #8ace00;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .input-area {
+      width: 100%;
+      padding: 12px;
+      background: #2a2a2a;
+      border: 2px solid #333;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 15px;
+    }
+
+    .input-area:focus {
+      outline: none;
+      border-color: #8ace00;
+      box-shadow: 0 0 10px rgba(138, 206, 0, 0.3);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #8ace00;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      background: #5a9e00;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(138, 206, 0, 0.4);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #333;
+      color: #ffffff;
+      border: 2px solid #666;
+    }
+
+    .btn-secondary:hover {
+      background: #444;
+      border-color: #8ace00;
+    }
+
+    /* Feedback Box */
+    .feedback-box {
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .feedback-box.correct {
+      background: rgba(74, 222, 128, 0.2);
+      border: 2px solid #4ade80;
+      color: #4ade80;
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .feedback-box.incorrect {
+      background: rgba(248, 113, 113, 0.2);
+      border: 2px solid #f87171;
+      color: #f87171;
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      background: #222;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 25px;
+      border: 1px solid #333;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #8ace00;
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8ace00, #5a9e00);
+      border-radius: 5px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 2px;
+    }
+
+    .tag-green {
+      background: rgba(74, 222, 128, 0.2);
+      color: #4ade80;
+      border: 1px solid rgba(74, 222, 128, 0.4);
+    }
+
+    .tag-red {
+      background: rgba(248, 113, 113, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(248, 113, 113, 0.4);
+    }
+
+    .tag-grey {
+      background: rgba(148, 163, 184, 0.2);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .tag-blue {
+      background: rgba(147, 197, 253, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(147, 197, 253, 0.4);
+    }
+
+    /* Score Display */
+    .score-display {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #222, #2a2a2a);
+      border-radius: 15px;
+      margin: 20px 0;
+      border: 2px solid #8ace00;
+    }
+
+    .score-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #8ace00;
+      text-shadow: 0 0 20px rgba(138, 206, 0, 0.5);
+    }
+
+    .score-label {
+      color: #cccccc;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* Schema Reference */
+    .schema-reference {
+      background: #222;
+      border: 2px solid #333;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .schema-reference h4 {
+      color: #8ace00;
+      margin-bottom: 15px;
+    }
+
+    .schema-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .schema-item {
+      background: #2a2a2a;
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 3px solid #8ace00;
+    }
+
+    .schema-item strong {
+      color: #8ace00;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .schema-item p {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      .main-title {
+        font-size: 1.8rem;
+      }
+      .nav-tabs {
+        flex-direction: column;
+      }
+      .nav-btn {
+        width: 100%;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      .main-title {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Title -->
+    <h1 class="main-title">📊 IELTS Pie Charts: Complete Practice Pack</h1>
+    <p class="subtitle">5 Interactive Tasks + Schema Reference • Band 7+ Preparation</p>
+
+    <!-- Progress -->
+    <div class="progress-container">
+      <div class="progress-header">
+        <span>Overall Progress</span>
+        <span><span id="totalProgress">0</span>% Complete</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="nav-btn active" data-task="1">📝 Task 1: Overview</button>
+      <button class="nav-btn" data-task="2">🔍 Task 2: Details</button>
+      <button class="nav-btn" data-task="3">📈 Task 3: Changes</button>
+      <button class="nav-btn" data-task="4">🔗 Task 4: Connectors</button>
+      <button class="nav-btn" data-task="5">📚 Task 5: Schema</button>
+    </div>
+
+    <!-- TASK 1: Overview Phrases -->
+    <div class="task-section active" id="task1">
+      <h2 class="task-title">⭐ Task 1: Overview Phrases Practice</h2>
+      <div class="task-instruction">
+        <strong>📌 Instruction:</strong> Click on the phrases you would use to write an overview for IELTS Task 1. 
+        Select ALL that apply. Then check your answers!
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">✅</span>
+            <h3 class="card-title">Correct Overview Starters</h3>
+          </div>
+          <ul class="phrase-list" id="overviewCorrect">
+            <li data-correct="true">"Overall, it is clear that..."</li>
+            <li data-correct="true">"In general, the largest proportion..."</li>
+            <li data-correct="true">"The most striking feature is that..."</li>
+            <li data-correct="true">"What stands out is that..."</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">❌</span>
+            <h3 class="card-title">Avoid These (Not for Overview)</h3>
+          </div>
+          <ul class="phrase-list" id="overviewIncorrect">
+            <li data-correct="false">"Firstly, I will describe..."</li>
+            <li data-correct="false">"In my opinion..."</li>
+            <li data-correct="false">"Looking at the details..."</li>
+            <li data-correct="false">"Furthermore,..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="interactive-box">
+        <h4>🎯 Quick Practice: Write Your Own Overview</h4>
+        <p style="color: #ccc; margin-bottom: 10px;">Complete this sentence for a pie chart showing 75% online shopping:</p>
+        <input type="text" class="input-area" id="overviewInput" placeholder="Overall, it is clear that...">
+        <button class="btn" id="checkOverviewBtn">✓ Check My Sentence</button>
+        <div class="feedback-box" id="overviewFeedback"></div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="nextTask(2)">Next Task: Details →</button>
+      </div>
+    </div>
+
+    <!-- TASK 2: Details Phrases -->
+    <div class="task-section" id="task2">
+      <h2 class="task-title">🔍 Task 2: Details Phrases Practice</h2>
+      <div class="task-instruction">
+        <strong>📌 Instruction:</strong> Match the phrase to its function. Click on a phrase, then click on its function.
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">📊</span>
+            <h3 class="card-title">Describing ONE Chart</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>"The largest segment, at 45%, represents..."</li>
+            <li>"X accounts for nearly half of the total"</li>
+            <li>"A mere 5% of respondents chose..."</li>
+            <li>"Z makes up approximately one-quarter of..."</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">📈</span>
+            <h3 class="card-title">Comparing TWO Charts</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>"In 2000, X accounted for 20%, whereas in 2020..."</li>
+            <li>"The proportion of Y increased significantly from..."</li>
+            <li>"There was a dramatic rise in X, from 10% to..."</li>
+            <li>"Z experienced a decline, falling from 30% to..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="interactive-box">
+        <h4>✍️ Practice: Complete the Sentence</h4>
+        <p style="color: #ccc; margin-bottom: 10px;">Fill in the blank with appropriate phrase:</p>
+        <p style="color: #fff; margin-bottom: 15px;">"In 2010, online sales accounted for 30%, ______ in 2020 this figure rose to 60%."</p>
+        <select class="input-area" id="detailsSelect">
+          <option value="">Choose the correct connector...</option>
+          <option value="whereas">whereas</option>
+          <option value="furthermore">furthermore</option>
+          <option value="in addition">in addition</option>
+          <option value="consequently">consequently</option>
+        </select>
+        <button class="btn" id="checkDetailsBtn">✓ Check Answer</button>
+        <div class="feedback-box" id="detailsFeedback"></div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="nextTask(1)">← Previous</button>
+        <button class="btn btn-secondary" onclick="nextTask(3)">Next Task: Changes →</button>
+      </div>
+    </div>
+
+    <!-- TASK 3: Describing Changes -->
+    <div class="task-section" id="task3">
+      <h2 class="task-title">📈 Task 3: Describing Changes</h2>
+      <div class="task-instruction">
+        <strong>📌 Instruction:</strong> Categorize each phrase as Increase ⬆️, Decrease ⬇️, or Stable ➡️
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">⬆️</span>
+            <h3 class="card-title">INCREASE</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>increased / rose / grew / climbed</li>
+            <li>increased <span class="tag tag-green">significantly</span></li>
+            <li>increased <span class="tag tag-green">dramatically</span></li>
+            <li><span class="tag tag-green">doubled</span> / <span class="tag tag-green">tripled</span></li>
+            <li><span class="tag tag-blue">by 10%</span> (difference)</li>
+            <li><span class="tag tag-blue">to 50%</span> (final number)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">⬇️</span>
+            <h3 class="card-title">DECREASE</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>decreased / fell / dropped / declined</li>
+            <li>decreased <span class="tag tag-red">slightly</span></li>
+            <li>decreased <span class="tag tag-red">significantly</span></li>
+            <li><span class="tag tag-red">halved</span></li>
+            <li><span class="tag tag-blue">by 15%</span> (difference)</li>
+            <li><span class="tag tag-blue">to 20%</span> (final number)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">➡️</span>
+            <h3 class="card-title">STABLE</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>remained stable / constant / unchanged</li>
+            <li>stayed at / leveled off at</li>
+            <li><span class="tag tag-grey">no significant change</span></li>
+            <li><span class="tag tag-grey">remained at around</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="interactive-box">
+        <h4>🎯 Quick Quiz: Identify the Change</h4>
+        <p style="color: #ccc; margin-bottom: 10px;">What type of change is this?</p>
+        <p style="color: #fff; margin-bottom: 15px; font-style: italic;">"The percentage of coal energy fell sharply from 45% to 20%."</p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="checkChange('increase')">⬆️ Increase</button>
+          <button class="btn btn-secondary" onclick="checkChange('decrease')">⬇️ Decrease</button>
+          <button class="btn btn-secondary" onclick="checkChange('stable')">➡️ Stable</button>
+        </div>
+        <div class="feedback-box" id="changeFeedback"></div>
+      </div>
+
+      <div class="score-display">
+        <div class="score-number" id="changeScore">0</div>
+        <div class="score-label">Correct Answers</div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="nextTask(2)">← Previous</button>
+        <button class="btn btn-secondary" onclick="nextTask(4)">Next Task: Connectors →</button>
+      </div>
+    </div>
+
+    <!-- TASK 4: Linking Words -->
+    <div class="task-section" id="task4">
+      <h2 class="task-title">🔗 Task 4: Linking Words & Connectors</h2>
+      <div class="task-instruction">
+        <strong>📌 Instruction:</strong> Choose the correct connector for each sentence.
+      </div>
+
+      <div class="interactive-box">
+        <h4>Quiz: Select the Best Connector</h4>
+        
+        <div style="margin-bottom: 20px;">
+          <p style="color: #fff; margin-bottom: 10px;">1. "Online shopping increased to 60%. ______, in-store purchases declined."</p>
+          <select class="input-area" id="connector1">
+            <option value="">Choose...</option>
+            <option value="however">However</option>
+            <option value="furthermore">Furthermore</option>
+            <option value="in addition">In addition</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <p style="color: #fff; margin-bottom: 10px;">2. "The proportion rose significantly. ______, it doubled in just 5 years."</p>
+          <select class="input-area" id="connector2">
+            <option value="">Choose...</option>
+            <option value="however">However</option>
+            <option value="furthermore">Furthermore</option>
+            <option value="in contrast">In Contrast</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <p style="color: #fff; margin-bottom: 10px;">3. "______, the largest segment represents online shopping at 45%."</p>
+          <select class="input-area" id="connector3">
+            <option value="">Choose...</option>
+            <option value="Overall">Overall</option>
+            <option value="However">However</option>
+            <option value="Consequently">Consequently</option>
+          </select>
+        </div>
+
+        <button class="btn" id="checkConnectorsBtn">✓ Check All Answers</button>
+        <div class="feedback-box" id="connectorsFeedback"></div>
+      </div>
+
+      <div class="schema-reference">
+        <h4>📚 Quick Reference: Connector Functions</h4>
+        <div class="schema-grid">
+          <div class="schema-item">
+            <strong>➕ Adding Information</strong>
+            <p>Furthermore, / Moreover, / In addition,</p>
+          </div>
+          <div class="schema-item">
+            <strong>🔄 Contrasting</strong>
+            <p>However, / In contrast, / On the other hand,</p>
+          </div>
+          <div class="schema-item">
+            <strong>📋 Sequencing</strong>
+            <p>Firstly, / Secondly, / Finally,</p>
+          </div>
+          <div class="schema-item">
+            <strong>➡️ Result</strong>
+            <p>As a result, / Consequently,</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="nextTask(3)">← Previous</button>
+        <button class="btn btn-secondary" onclick="nextTask(5)">Next Task: Schema →</button>
+      </div>
+    </div>
+
+    <!-- TASK 5: Complete Schema -->
+    <div class="task-section" id="task5">
+      <h2 class="task-title">📚 Task 5: Complete Schema Reference</h2>
+      <div class="task-instruction">
+        <strong>📌 Instruction:</strong> Use this as your final reference. Save this page for exam preparation!
+      </div>
+
+      <div class="schema-reference">
+        <h4>🎯 Band 9 Writing Structure</h4>
+        <div class="schema-grid">
+          <div class="schema-item">
+            <strong>Paragraph 1: Introduction</strong>
+            <p>Paraphrase the question (1 sentence)</p>
+          </div>
+          <div class="schema-item">
+            <strong>Paragraph 2: Overview ⭐</strong>
+            <p>2-3 main trends (NO specific data) - 25% of score!</p>
+          </div>
+          <div class="schema-item">
+            <strong>Paragraph 3: Details 1</strong>
+            <p>Largest segments + data + comparisons</p>
+          </div>
+          <div class="schema-item">
+            <strong>Paragraph 4: Details 2</strong>
+            <p>Smaller segments + changes over time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">⭐</span>
+            <h3 class="card-title">Overview Phrases</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>"Overall, it is clear that..."</li>
+            <li>"In general, the largest proportion..."</li>
+            <li>"The most striking feature is that..."</li>
+            <li>"What stands out is that..."</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">🔍</span>
+            <h3 class="card-title">Details Phrases</h3>
+          </div>
+          <ul class="phrase-list">
+            <li>"Looking at the details,..."</li>
+            <li>"More specifically,..."</li>
+            <li>"In terms of X,..."</li>
+            <li>"With regard to Y,..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="score-display">
+        <div class="score-number" id="finalScore">0%</div>
+        <div class="score-label">Overall Completion</div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="nextTask(4)">← Previous</button>
+        <button class="btn" onclick="resetAll()">🔄 Restart All Tasks</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // State
+    let currentTask = 1;
+    let completedTasks = {1: false, 2: false, 3: false, 4: false, 5: false};
+    let changeScore = 0;
+    let connectorScore = 0;
+
+    // Navigation
+    function nextTask(taskNum) {
+      document.querySelectorAll('.task-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      document.getElementById(`task${taskNum}`).classList.add('active');
+      document.querySelector(`[data-task="${taskNum}"]`).classList.add('active');
+      currentTask = taskNum;
+      
+      // Mark as completed
+      completedTasks[taskNum] = true;
+      updateProgress();
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Update Progress
+    function updateProgress() {
+      const completed = Object.values(completedTasks).filter(v => v).length;
+      const percent = Math.round((completed / 5) * 100);
+      document.getElementById('totalProgress').textContent = percent;
+      document.getElementById('progressFill').style.width = `${percent}%`;
+      document.getElementById('finalScore').textContent = `${percent}%`;
+    }
+
+    // Task 1: Overview Check
+    document.getElementById('checkOverviewBtn').addEventListener('click', function() {
+      const input = document.getElementById('overviewInput').value.toLowerCase();
+      const feedback = document.getElementById('overviewFeedback');
+      
+      if (input.includes('overall') || input.includes('in general') || input.includes('striking') || input.includes('stands out')) {
+        feedback.textContent = '✅ Excellent! You used a proper overview starter.';
+        feedback.className = 'feedback-box correct';
+        completedTasks[1] = true;
+        updateProgress();
+      } else if (input.length > 10) {
+        feedback.textContent = '⚠️ Good try! Try starting with "Overall,..." or "In general,..." for better IELTS structure.';
+        feedback.className = 'feedback-box incorrect';
+      } else {
+        feedback.textContent = '❌ Please write a complete sentence using overview phrases from above.';
+        feedback.className = 'feedback-box incorrect';
+      }
+    });
+
+    // Task 2: Details Check
+    document.getElementById('checkDetailsBtn').addEventListener('click', function() {
+      const answer = document.getElementById('detailsSelect').value;
+      const feedback = document.getElementById('detailsFeedback');
+      
+      if (answer === 'whereas') {
+        feedback.textContent = '✅ Correct! "Whereas" shows contrast between two time periods.';
+        feedback.className = 'feedback-box correct';
+        completedTasks[2] = true;
+        updateProgress();
+      } else {
+        feedback.textContent = '❌ Incorrect. "Whereas" is used to show contrast. Try again!';
+        feedback.className = 'feedback-box incorrect';
+      }
+    });
+
+    // Task 3: Change Check
+    function checkChange(type) {
+      const feedback = document.getElementById('changeFeedback');
+      
+      if (type === 'decrease') {
+        feedback.textContent = '✅ Correct! "Fell sharply" indicates a decrease.';
+        feedback.className = 'feedback-box correct';
+        changeScore++;
+        document.getElementById('changeScore').textContent = changeScore;
+      } else {
+        feedback.textContent = '❌ Incorrect. "Fell" means decrease. Look for keywords like "fell", "dropped", "declined".';
+        feedback.className = 'feedback-box incorrect';
+      }
+    }
+
+    // Task 4: Connectors Check
+    document.getElementById('checkConnectorsBtn').addEventListener('click', function() {
+      const c1 = document.getElementById('connector1').value;
+      const c2 = document.getElementById('connector2').value;
+      const c3 = document.getElementById('connector3').value;
+      const feedback = document.getElementById('connectorsFeedback');
+      
+      let correct = 0;
+      if (c1 === 'however') correct++;
+      if (c2 === 'furthermore') correct++;
+      if (c3 === 'Overall') correct++;
+      
+      if (correct === 3) {
+        feedback.textContent = `✅ Perfect! All ${correct}/3 correct. You understand connectors well!`;
+        feedback.className = 'feedback-box correct';
+        completedTasks[4] = true;
+        updateProgress();
+      } else {
+        feedback.textContent = `⚠️ You got ${correct}/3 correct. Review: 1=however (contrast), 2=furthermore (adding), 3=Overall (overview)`;
+        feedback.className = 'feedback-box incorrect';
+      }
+    });
+
+    // Reset All
+    function resetAll() {
+      if (confirm('Restart all tasks? Your progress will be reset.')) {
+        currentTask = 1;
+        completedTasks = {1: false, 2: false, 3: false, 4: false, 5: false};
+        changeScore = 0;
+        connectorScore = 0;
+        
+        document.querySelectorAll('.task-section').forEach(section => {
+          section.classList.remove('active');
+        });
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        document.getElementById('task1').classList.add('active');
+        document.querySelector('[data-task="1"]').classList.add('active');
+        
+        document.getElementById('totalProgress').textContent = '0';
+        document.getElementById('progressFill').style.width = '0%';
+        document.getElementById('finalScore').textContent = '0%';
+        document.getElementById('changeScore').textContent = '0';
+        
+        // Clear inputs
+        document.querySelectorAll('.input-area').forEach(input => {
+          if (input.tagName === 'INPUT') input.value = '';
+          if (input.tagName === 'SELECT') input.value = '';
+        });
+        
+        // Clear feedback
+        document.querySelectorAll('.feedback-box').forEach(box => {
+          box.style.display = 'none';
+        });
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Initialize
+    updateProgress();
+  </script>
+</body>
+</html>

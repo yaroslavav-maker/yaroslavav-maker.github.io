@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ярослава — методист английского | Интерактивные уроки</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#141a2a;color:#e8ecf7;font-family:'Segoe UI',Tahoma,sans-serif;line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:48px 20px}
+  h1{font-family:'Press Start 2P',monospace;font-size:20px;color:#ffd93d;text-align:center;line-height:1.6}
+  .tag{text-align:center;color:#8fd3ff;margin:14px 0 6px;font-size:17px}
+  .sub{text-align:center;color:#9aa4bd;margin-bottom:40px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+  .card{background:#1e2740;border:2px solid #35507a;border-radius:14px;padding:22px;display:flex;flex-direction:column;transition:.2s}
+  .card:hover{transform:translateY(-4px);border-color:#ffd93d}
+  .lvl{align-self:flex-start;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;background:#2b3c61;color:#8fd3ff;margin-bottom:12px}
+  .card h2{font-size:19px;margin-bottom:8px}
+  .card p{font-size:14px;color:#b9c2d8;flex-grow:1}
+  .btn{display:block;text-align:center;margin-top:16px;padding:12px;border-radius:10px;text-decoration:none;font-weight:700;background:#ffd93d;color:#141a2a}
+  .btn:hover{background:#ffe36b}
+
+  .shots{margin-top:56px}
+  .shots h2,.about h2{font-family:'Press Start 2P',monospace;font-size:13px;color:#8fd3ff;margin-bottom:20px;text-align:center}
+  .shot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .shot{background:#1e2740;border:2px solid #35507a;border-radius:14px;padding:12px;display:block;text-decoration:none;transition:.2s}
+  .shot:hover{border-color:#ffd93d;transform:translateY(-4px)}
+  .shot img{width:100%;display:block;border-radius:8px}
+  .shot span{display:block;margin-top:10px;font-size:13px;color:#9aa4bd;text-align:center}
+
+  .about{margin-top:56px;background:#1e2740;border:2px dashed #35507a;border-radius:14px;padding:24px}
+  .about h2{text-align:left;margin-bottom:12px}
+  .about li{margin-left:20px;margin-bottom:6px;color:#b9c2d8}
+
+  footer{margin-top:40px;text-align:center;color:#9aa4bd;font-size:14px}
+  a.mail{color:#8fd3ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>ЯРОСЛАВА · МЕТОДИСТ АНГЛИЙСКОГО</h1>
+  <p class="tag">Создаю интерактивные уроки, в которые хочется играть</p>
+  <p class="sub">Геймификация · CEFR · тренажёры под экзамены · уникальные материалы</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="lvl">B1 · TEENS</span>
+      <h2>🗼 Travel Quest «Paris»</h2>
+      <p>Грамматический квест в пиксель-стиле: чат с персонажем, звёзды и подсказки за монеты. Future forms в живом общении.</p>
+      <a class="btn" href="paris.html">Играть урок ▶</a>
+    </div>
+    <div class="card">
+      <span class="lvl">ESP · PRO</span>
+      <h2>⚓ Maritime English</h2>
+      <p>Интерактивный тренажёр времени UTC, банк лексики и правила морской коммуникации с примерами.</p>
+      <a class="btn" href="maritime.html">Играть урок ▶</a>
+    </div>
+    <div class="card">
+      <span class="lvl">IELTS · B2+</span>
+      <h2>📊 Pie Charts Pack</h2>
+      <p>5 интерактивных задач + схема Band 9 для Academic Writing Task 1. Работа в логике критериев оценивания.</p>
+      <a class="btn" href="ielts.html">Играть урок ▶</a>
+    </div>
+  </div>
+
+  <section class="shots">
+    <h2>ЧТО ГОВОРЯТ ТЕ, КТО ПРОШЁЛ УРОКИ</h2>
+    <div class="shot-grid">
+      <a class="shot" href="img/rev1.png" target="_blank">
+        <img src="img/rev1.png" alt="Отзыв о квесте «Paris»">
+        <span>мама ученицы, которой 14 лет, B1 · квест «Paris»</span>
+      </a>
+      <a class="shot" href="img/rev2.png" target="_blank">
+        <img src="img/rev2.png" alt="Отзыв родителя">
+        <span>ученик, 18 лет, A2 · модуль Maritime English</span>
+      </a>
+      <a class="shot" href="img/rev3.png" target="_blank">
+        <img src="img/rev3.png" alt="Отзыв о тренажёре IELTS">
+        <span>ученица, 17 лет, B2 · IELTS Pack</span>
+      </a>
+      <!-- Чтобы добавить ещё скрин: скопируйте блок <a class="shot">…</a> и поменяйте номер файла -->
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>КАК Я ПРОЕКТИРУЮ УРОКИ</h2>
+    <ul>
+      <li>На входном занятии получаю цель, уровень по CEFR и интересы ученика → создаю план уроков по Backward Design → придумываю сюжет и механику урока.</li>
+      <li>В особенности использую геймификация и прогресс-бары: ученику интересно дойти до конца, родитель видит результат.</li>
+      <li>Опора на критерии оценивания (ФГОС / ФИПИ / IELTS / др. требования): учу попадать в баллы.</li>
+      <li>Инструменты: HTML/CSS/JS, Figma, Photoshop, Premiere Pro, ИИ, Tilda.</li>
+    </ul>
+  </section>
+
+  <footer>Связаться: <a class="mail" href="mailto:iaroslava.varnavskaya@yandex.ru">iaroslava.varnavskaya@yandex.ru</a> · Telegram: @natejacns</footer>
+
+</div>
+</body>
+</html>
